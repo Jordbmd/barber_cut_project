@@ -1,5 +1,9 @@
 {% extends "customer/base_customer.html.twig" %}
 
+{% block title %}
+Product
+{% endblock %}
+
 {% block body %}
     <h1>Category</h1>
 
@@ -24,5 +28,6 @@
 
     <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
 
-    {{ include('category/_delete_form.html.twig') }}
+
+    {{ include('admin/category/_delete_form.html.twig') }}
 {% endblock %}

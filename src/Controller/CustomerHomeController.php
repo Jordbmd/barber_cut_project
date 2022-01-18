@@ -2,19 +2,28 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\CategoryRepository;
+use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CustomerHomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index(CategoryRepository $categoryRepository, ProductRepository $productRepository): Response
     {
-        return $this->render('customer/base_customer.html.twig', [
+        $categories = $categoryRepository->findAll();
+
+        $products = $productRepository->findBy([], null, 8);
+
+
+        return $this->render('customer/home_customer.html.twig', [
             'controller_name' => 'CustomerHomeController',
+            'categories' => $categories,
+            'products' => $products
         ]);
     }
 }
