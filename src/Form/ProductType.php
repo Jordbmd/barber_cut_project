@@ -30,6 +30,9 @@ class ProductType extends AbstractType
             ->add('name',TextType::class,[
                 'label' => 'Nom du produit'
             ])
+            ->add('description',TextType::class,[
+                'label' => 'Description'
+            ])
             ->add('price',MoneyType::class,[
                 'divisor' => 100,
                 'currency' => 'EUR',

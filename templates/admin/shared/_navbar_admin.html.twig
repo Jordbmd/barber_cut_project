@@ -1,43 +1,52 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="#">Administration</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+<nav class="navbar navbar-expand-lg navcss">
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="container-fluid">
+
+		<div class="col-12">	
+
+			<div class="">
+
+				<button class="navbar-toggler custom-toggler display" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon custom-toggler"></span>
+				</button>
+
+			</div>
 
 
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('admin_home') }}">Accueil</a>
-				</li>
+			<div class="collapse navbar-collapse justify-content-center" id="navbarText">
 
-				<li class="nav-item">
-					<a class="nav-link" href="">Gallerie</a>
-				</li>
 
-				<li class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Magasin</a>
-					<div class="dropdown-menu">
-						<a href="{{ path('product_index') }}" class="dropdown-item">Produits</a>
-						<a href="{{ path('category_index') }}" class="dropdown-item">catégories</a>
-					</div>
-				</li>
+				<ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
 
-				<li class="nav-item">
-					<a class="nav-link" href="#">FAQ</a>
-				</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link dropdown-toggle color_nav" data-bs-toggle="dropdown">Magasin</a>
+							<div class="dropdown-menu">
+								<a href="{{ path('admin_product_show') }}" class="dropdown-item">Produits</a>
+								<a href="{{ path('category_index') }}" class="dropdown-item">catégories</a>
+							</div>
+						</li>
 
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('home') }}">Revenir vers le site</a>
-				</li>
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('home') }}">
+								<img class="logo color_nav px-4"src="\uploads\images\logo.png" alt="logo_barber_cut">
+							</a>
+						</li>
 
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
-				</li>
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('home') }}">Revenir vers le site</a>
+						</li>
 
-			</ul>
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('app_logout') }}">Se déconnecter</a>
+						</li>
+
+				</ul>
+			
+			</div>
+
 		</div>
+
 	</div>
+  
 </nav>

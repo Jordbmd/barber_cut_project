@@ -17,7 +17,7 @@ class CustomerHomeController extends AbstractController
     {
         $categories = $categoryRepository->findAll();
 
-        $products = $productRepository->findBy([], null, 8);
+        $products = $productRepository->findAll();
 
 
         return $this->render('customer/home_customer.html.twig', [

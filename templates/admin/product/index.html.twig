@@ -1,4 +1,4 @@
-{% extends "customer/base_customer.html.twig" %}
+{% extends "admin/base_admin.html.twig" %}
 
 {% block title %}
 Product
@@ -43,12 +43,10 @@ Product
                         <div class="card-body">
                             <h5 class="text-center">{{ product.name }}</h5>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-button">
                             <a class="btn btn-info w-100" href="{{ path('product_edit',{'id' : product.id }) }}">Modifier</a>
-                            <a class="btn btn-danger w-100" href="{{ path('product_edit',{'id' : product.id }) }}">Supprimer</a>
-                            <a href="{{ path('customer_product_id_show',{'id' : product.id}) }}" class="btn btn-primary w-100">See product</a>
-
-                            
+                            <a href="{{ path('admin_product_id_show',{'id' : product.id}) }}" class="btn btn-primary w-100">See product</a>
+                            {{ include('admin/product/_delete_form.html.twig') }}
                         </div>
                     </div>
                 </div>

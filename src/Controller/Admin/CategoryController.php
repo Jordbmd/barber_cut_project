@@ -69,7 +69,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="category_edit", methods={"GET", "POST"})
+     * @Route("edit/{id}", name="category_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Category $category, EntityManagerInterface $entityManager): Response
     {
@@ -89,7 +89,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("delete/{id}", name="category_delete", methods={"POST"})
+     * @Route("delete/{id}", name="category_delete", methods={"POST", "GET"})
      */
     public function delete(Request $request, Category $category, EntityManagerInterface $entityManager): Response
     {

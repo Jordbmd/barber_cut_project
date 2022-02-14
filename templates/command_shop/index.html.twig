@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<title>CommandShop index</title>
+
+{% block body %}
+    <h1>CommandShop index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>CreatedAt</th>
+                <th>Total</th>
+                <th>IsPayed</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for command_shop in command_shops %}
+            <tr>
+                <td>{{ command_shop.id }}</td>
+                <td>{{ command_shop.createdAt ? command_shop.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ command_shop.total | euroPrice}}</td>
+                <td>{{ command_shop.isPayed ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('command_shop_show', {'id': command_shop.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('command_shop_new') }}">Create new</a>
+{% endblock %}

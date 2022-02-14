@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<title>CommandShop</title>
+
+{% block body %}
+    <h1>CommandShop</h1>
+
+    <pre>
+    {{ dump(command_shop.commandListProduct.contentListCommandShops) }}
+    </pre>
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ command_shop.id }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ command_shop.createdAt ? command_shop.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>{{ command_shop.total | euroPrice}}</td>
+            </tr>
+            <tr>
+                <th>IsPayed</th>
+                <td>{{ command_shop.isPayed ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>produit</th>
+                <td>{{ command_shop.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('command_shop_index') }}">back to list</a>
+
+    <a href="{{ path('command_shop_edit', {'id': command_shop.id}) }}">edit</a>
+
+    {{ include('command_shop/_delete_form.html.twig') }}
+{% endblock %}

@@ -2,13 +2,15 @@
 
 {% block body %}
 
+{% block header %}
+
 	{# PARTIE HEADER #}
-	<section>
+	<section class="carousel">
 		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-inner">
+			<div class="carousel-inner navheight">
 
 				<div class="carousel-item active">
-					<img src="\uploads\images\green.jpg" class="d-block w-100 imageCarroussel" alt="">
+					<img src="\uploads\images\green.jpg" class="d-block w-100 imageCarroussel" alt="salon">
 				</div>
 
 				<div class="carousel-item">
@@ -16,18 +18,10 @@
 				</div>
 
 			</div>
-
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
 		</div>
 	</section>
 
+{% endblock %}
 
 	{# PARTIE LISTE PRODUITS #}
 	<section>
@@ -37,29 +31,95 @@
 					{% include "customer/shared/_messages_flash.html.twig" %}
 				</div>
 				<div class="col-12">
-					<h3 class="text-center">Les derniers produits</h3>
+					<h3 class="h3Home">Barber'Cut</h3>
+					<h4 class="h4Home">PRODUITS POPULAIRES</h4>
 				</div>
-				{% for product in products %}
-					<div class="col-sm-12 col-md-6 col-lg-4 mt-3">
-						<div class="card" style="width: 18rem;">
-							<img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top">
-							<div class="card-body text-center">
-								<h5 class="text-center">{{ product.name }}</h5>
-								<h5 class="text-center">{{ product.price | euroPrice }}</h5>
-								<a href="{{ path('customer_product_id_show',{'id' : product.id}) }}" class="btn btn-primary">Voir le produit</a>
+
+
+
+				{% if products %}
+
+					{# boucle qui affiche les derniers produits #}
+
+					{% for i in (products|length - 1)..(products|length - 4) %}
+					
+						<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
+							<div class="card" style="width: 18rem;">
+								<img src="{{ asset(products[i].imagePath) }}" alt="{{ products[i].name }}" class="card-img-top">
+								<div class="card-body text-center">
+									<h5 class="text-center">{{ products[i].name }}</h5>
+									<h5 class="text-center">{{ products[i].price | euroPrice }}</h5>
+									<a class="btn color-button" href="{{ path('customer_product_id_show',{'id' : products[i].id}) }}">Voir le produit</a>
+								</div>
 							</div>
 						</div>
-					</div>
-				{% endfor %}
+						
+					{% endfor %}
+				
+				{% endif %}
+
+				
 			</div>
 		</div>
 	</section>
 
 
+	{# PARTIE SERVICES #}
+	<section>
+		<div class="container py-3">
+
+			<div class="row">
+			
+				<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
+					<div class="card" style="width: 18rem;">
+						<img src="" alt="" class="card-img-top">
+						<div class="card-body text-center">
+							<h5 class="text-center">Cheveux</h5>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
+					<div class="card" style="width: 18rem;">
+						<img src="" alt="" class="card-img-top">
+						<div class="card-body text-center">
+							<h5 class="text-center">Cheveux</h5>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
+					<div class="card" style="width: 18rem;">
+						<img src="" alt="" class="card-img-top">
+						<div class="card-body text-center">
+							<h5 class="text-center">Cheveux</h5>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
+					<div class="card" style="width: 18rem;">
+						<img src="" alt="" class="card-img-top">
+						<div class="card-body text-center">
+							<h5 class="text-center">Cheveux</h5>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+
 	{# PARTIE CARTE #}
 	<section>
 		<div>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9588863319755!2d2.371692215674396!3d48.858994379287466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66df93c73dcbf%3A0x537a5e663704d585!2s35%20Rue%20du%20Chemin%20Vert%2C%2075011%20Paris!5e0!3m2!1sfr!2sfr!4v1642516111204!5m2!1sfr!2sfr" width="2000" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9588863319755!2d2.371692215674396!3d48.858994379287466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66df93c73dcbf%3A0x537a5e663704d585!2s35%20Rue%20du%20Chemin%20Vert%2C%2075011%20Paris!5e0!3m2!1sfr!2sfr!4v1642516111204!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 		</div>
 	</section>
 

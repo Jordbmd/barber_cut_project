@@ -1,99 +1,136 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<div class="container-fluid">
-		<div class="col-12 d-flex justify-content-center ">
+<nav class="navbar navbar-expand-lg navcss">
+
+    <div class="container-fluid">
+
+		<div class="col-12">
+
 			<div>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+
+				<button class="navbar-toggler custom-toggler display" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon custom-toggler"></span>
 				</button>
+
 			</div>
 
-			<div>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<div class="collapse navbar-collapse col-12" id="navbarText">
 
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
 
-						{% if app.user %}
+					{% if app.user %}
 
-							{% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+						{% if app.user.roles[0] is same as "ROLE_ADMIN" %}
 
-								<li class="nav-item">
-									<a class="nav-link" href="{{ path('admin_home') }}">Administration</a>
-								</li>
-
-							{% endif %}
-
-							<li class="nav-item">
-								<a class="nav-link" href="">Gallery</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('customer_product_show') }}">Shop</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="#">FAQ</a>
-							</li>
-
-							<li>
-								<a href="{{ path('home') }}">
-									<img src="\uploads\images\logo.png" alt="logo_barber_cut">
-								</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('customer_contact') }}">Contact</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('cart_detail') }}">Mon panier</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
-							</li>
-
-						{% else %}
-
-							<li class="nav-item">
-								<a class="nav-link" href="">Gallery</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('customer_product_show') }}">Shop</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="#">FAQ</a>
-							</li>
-
-							<li>
-								<a href="{{ path('home') }}">
-									<img src="\uploads\images\logo.png" alt="logo_barber_cut">
-								</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('customer_contact') }}">Contact</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('cart_detail') }}">Mon panier</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_login') }}">Login/Register</a>
-							</li>
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('admin_home') }}">Administration</a>
+						</li>
 
 						{% endif %}
 
+						<li class="nav-item">
+							<a class="color_nav" href="#">Galerie</a>
+						</li>
 
-					</ul>
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('customer_product_show') }}">Magasin</a>
+						</li>
 
 
-				</div>
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('home') }}">
+								<img class="logo color_nav px-4"src="\uploads\images\logo.png" alt="logo_barber_cut">
+							</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('customer_contact') }}">Contact</a>
+						</li>
+
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle color_nav" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Mon compte
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="{{ path('command_shop_index') }}">Mes commandes</a></li>
+								<li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+							</ul>
+						</li>
+
+
+						{# <li class="nav-item debug0">
+							<a href="#" class="nav-link dropdown-toggle color_nav" data-bs-toggle="dropdown">Mon compte</a>
+							<ul class="dropdown-menu debug1">
+								<li>
+									<a href="{{ path('command_shop_index') }}" class="dropdown-item">Mes commandes</a>
+								</li>
+
+								<li>
+									<a href="{{ path('app_logout') }}" class="dropdown-item">Se déconnecter</a>
+								</li>
+							</ul>
+						</li> #}
+
+
+						{% else %}
+
+
+						<li class="nav-item">
+							<a class="color_nav" href="#">Galerie</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('customer_product_show') }}">Magasin</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('command_shop_index') }}">Mes commandes</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('home') }}">
+								<img class="logo color_nav px-4"src="\uploads\images\logo.png" alt="logo_barber_cut">
+							</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('customer_contact') }}">Contact</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('command_shop_index') }}">Mon commandes</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('app_login') }}">Login/Register</a>
+						</li>
+						
+						
+						{% endif %}
+						
+
+				</ul>
+
+
+				<span class="navbar-text ms-auto">
+					<a class="ms-auto" href="{{ path('cart_detail') }}">
+						<img class="shopping_bag color_nav px-3" src="\uploads\images\shopping-bag.png" alt="panier_de_produits">
+					</a>
+				</span>
+
+
 			</div>
-		</div>
-	</div>
 
+		</div>
+
+	</div>
+  
 </nav>
