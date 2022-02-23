@@ -1,0 +1,25 @@
+.imageCarroussel
+{
+    height: 450px;
+    object-fit: cover;
+}
+
+.section1
+{
+    background-color: #F7F4EF;
+    padding-bottom: 75px;
+    padding-top: 50px;
+
+}
+
+.section2
+{
+    background-color: white;
+    padding-top: 75px;
+    padding-bottom: 50px;
+}
+
+.icons
+{
+    width: 20%;
+}

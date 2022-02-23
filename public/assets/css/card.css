@@ -1,0 +1,42 @@
+.cardProduct
+{
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 7px 4px #000000; 
+    box-shadow: 0px 0px 7px 4px #000000;
+    font-size: 18px;
+}
+
+.cardColor1
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: white;
+    border-radius: 0%;
+    border: none;
+}
+
+.cardColor2
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #F7F4EF;
+    border-radius: 0%;
+    border: none;
+}
+
+.text-card-show
+{
+    text-align: justify;
+}
+
+.imageCard
+{
+    height: 250px;
+    object-fit: cover;
+}
+
+.imageProductCart
+{
+    height: 50px;
+    object-fit: cover;
+}

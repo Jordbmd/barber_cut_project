@@ -1,0 +1,36 @@
+{% extends "customer/base_customer.html.twig" %}
+
+{% block title %}
+	Booking
+{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des reservations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>N° de telephone</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for booking in booking %}
+            <tr>
+                <td>{{ booking.lastname }}</td>
+                <td>{{ booking.firstname}}</td>
+                <td>{{ booking.phonenumber }}</td>
+                <td>{{ booking.date|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

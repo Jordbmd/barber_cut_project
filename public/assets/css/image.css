@@ -1,0 +1,11 @@
+.imageCarroussel
+{
+    height: 450px;
+    object-fit: cover;
+}
+
+.imageProductPage
+{
+    height: 500px;
+    object-fit: contain;
+}

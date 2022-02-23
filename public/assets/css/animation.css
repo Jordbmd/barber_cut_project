@@ -1,0 +1,31 @@
+.logo:hover
+{
+    animation-name: x360;
+    animation: x360 0.7s linear;
+}
+
+.color_nav:hover
+{
+    color: #009540;
+}
+
+.color-button:hover
+{
+    color: #fff;
+    background-color: #262626;
+    transition: 0.3s;
+    border: none;
+    border-radius: 0%;
+}
+
+@keyframes x360{
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

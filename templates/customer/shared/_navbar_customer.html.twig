@@ -43,6 +43,9 @@
 							</a>
 						</li>
 
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('booking') }}">Reservation</a>
+						</li>
 
 						<li class="nav-item">
 							<a class="color_nav" href="{{ path('customer_contact') }}">Contact</a>
@@ -60,20 +63,6 @@
 						</li>
 
 
-						{# <li class="nav-item debug0">
-							<a href="#" class="nav-link dropdown-toggle color_nav" data-bs-toggle="dropdown">Mon compte</a>
-							<ul class="dropdown-menu debug1">
-								<li>
-									<a href="{{ path('command_shop_index') }}" class="dropdown-item">Mes commandes</a>
-								</li>
-
-								<li>
-									<a href="{{ path('app_logout') }}" class="dropdown-item">Se déconnecter</a>
-								</li>
-							</ul>
-						</li> #}
-
-
 						{% else %}
 
 
@@ -86,31 +75,29 @@
 							<a class="color_nav" href="{{ path('customer_product_show') }}">Magasin</a>
 						</li>
 
-
-						<li class="nav-item">
-							<a class="color_nav" href="{{ path('command_shop_index') }}">Mes commandes</a>
-						</li>
-
-
 						<li class="nav-item">
 							<a class="color_nav" href="{{ path('home') }}">
 								<img class="logo color_nav px-4"src="\uploads\images\logo.png" alt="logo_barber_cut">
 							</a>
 						</li>
 
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('booking') }}">Reservation</a>
+						</li>
 
 						<li class="nav-item">
 							<a class="color_nav" href="{{ path('customer_contact') }}">Contact</a>
 						</li>
 
-
-						<li class="nav-item">
-							<a class="color_nav" href="{{ path('command_shop_index') }}">Mon commandes</a>
-						</li>
-
-
-						<li class="nav-item">
-							<a class="color_nav" href="{{ path('app_login') }}">Login/Register</a>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle color_nav" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Mon compte
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="{{ path('command_shop_index') }}">Mes commandes</a></li>
+								<li><a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a></li>
+								<li><a class="dropdown-item" href="{{ path('app_register') }}">S'inscrire</a></li>
+							</ul>
 						</li>
 						
 						

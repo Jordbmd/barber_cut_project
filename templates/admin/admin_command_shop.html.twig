@@ -1,10 +1,11 @@
 {% extends "customer/base_customer.html.twig" %}
 
 {% block title %}
-	Mes commandes
+	Command
 {% endblock %}
 
 {% block body %}
+
     <h1>CommandShop index</h1>
 
     <table class="table">
@@ -25,7 +26,7 @@
                 <td>{{ command_shop.total | euroPrice}}</td>
                 <td>{{ command_shop.isPayed ? 'Oui' : 'Non' }}</td>
                 <td>
-                    <a href="{{ path('command_shop_show', {'id': command_shop.id}) }}">Voir</a>
+                    <a href="{{ path('admin_command_show', {'id': command_shop.id}) }}">Voir</a>
                 </td>
             </tr>
         {% else %}
@@ -36,5 +37,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('command_shop_new') }}">Create new</a>
 {% endblock %}

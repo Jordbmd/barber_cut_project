@@ -18,12 +18,24 @@
 
 				<ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
 
-						<li class="nav-item">
-							<a href="#" class="nav-link dropdown-toggle color_nav" data-bs-toggle="dropdown">Magasin</a>
-							<div class="dropdown-menu">
-								<a href="{{ path('admin_product_show') }}" class="dropdown-item">Produits</a>
-								<a href="{{ path('category_index') }}" class="dropdown-item">catégories</a>
-							</div>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle color_nav" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Magasin
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="{{ path('admin_product_show') }}">Produits</a></li>
+								<li><a class="dropdown-item" href="{{ path('category_index') }}">Catégories</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle color_nav" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Services
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="{{ path('admin_command_shop') }}">Commandes</a></li>
+								<li><a class="dropdown-item" href="{{ path('admin_booking') }}">Reservation</a></li>
+							</ul>
 						</li>
 
 						<li class="nav-item">
@@ -35,7 +47,6 @@
 						<li class="nav-item">
 							<a class="color_nav" href="{{ path('home') }}">Revenir vers le site</a>
 						</li>
-
 
 						<li class="nav-item">
 							<a class="color_nav" href="{{ path('app_logout') }}">Se déconnecter</a>
