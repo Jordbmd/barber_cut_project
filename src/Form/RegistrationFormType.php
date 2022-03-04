@@ -24,21 +24,23 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Votre email'
             ])
             ->add('pseudo',TextType::class,[
-                'label' => 'pseudo'
+                'label' => 'Pseudo'
             ])
             ->add('firstname',TextType::class,[
-                'label' => 'firstname'
+                'label' => 'Prénom'
             ])
             ->add('lastname',TextType::class,[
-                'label' => 'lastname'
+                'label' => 'Nom'
             ])
-            ->add('phone_number')
+            ->add('phone_number',TextType::class,[
+                'label' => 'N° de téléphone'
+            ])
             ->add('CGV', CheckboxType::class, [
                 'label' => 'Veuillez accepter les CGV',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter nos conditions',
                     ]),
                 ],
             ])
@@ -49,10 +51,10 @@ class RegistrationFormType extends AbstractType
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
                 'first_options'  => [
-                    'label' => 'password'
+                    'label' => 'Mot de passe'
                 ],
                 'second_options' => [
-                    'label' => 'Confirm password'
+                    'label' => 'Confirmation de mot de passe'
                 ],
             ])
         ;

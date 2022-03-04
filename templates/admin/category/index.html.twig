@@ -1,39 +1,77 @@
 {% extends "customer/base_customer.html.twig" %}
 
 {% block title %}
-Product
+Admin Category Home
 {% endblock %}
-
 
 {% block body %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mt-3 d-flex align-items-center justify-content-between">
-                <h1>Liste des catégories</h1>
-                <a class="btn btn-primary" href="{{ path('category_new') }}">Ajouter</a>
-            </div>
-            {% for category in categories %}
-                <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <img src="{{ asset(category.imagePath) }}" alt="{{ category.name }}" class="w-100 imageCard">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="text-center">{{ category.name }}</h5>
-                        </div>
-                        <div class="card-footer">
-                            <a class="btn btn-info w-100" href="{{ path('category_edit',{'id' : category.id }) }}">Modifier</a>
-                            <a class="btn btn-info w-100" href="{{ path('category_show',{'id' : category.id }) }}">show</a>
+    <div class="backgroundF7F4EF">
 
+		<div class="container">
 
-                            {{ include('admin/category/_delete_form.html.twig') }}
-                            
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Ajouter, Modifier ou Supprimer toutes vos catégories !</h2>
+				<a class="btn color-button" href="{{ path('product_new') }}">Ajouter</a>
+			</div>
+
+			<div class="row">
+
+				{% for category in categories %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
+                        <div class="card cardStyle1">
+                            <img src="{{ asset(category.imagePath) }}" alt="{{ category.name }}" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="text-center">{{ category.name }}</h5>
+                            </div>
+                            <div class="card-button">
+                                <a href="{{ path('category_show',{'id' : category.id}) }}" class="btn color-button w-100">Voir</a>
+                                <a href="{{ path('category_edit',{'id' : category.id }) }}" class="btn btn-info buttonUpdate w-100">Modifier</a>
+                                {{ include('admin/category/_delete_form.html.twig') }}
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-    
+                {% endfor %}
+			</div>
+
+		</div>
+
     </div>
+
 {% endblock %}
+
+    {# <div class="backgroundF7F4EF">
+
+
+		<div class="container">
+
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Ajoutez toutes vos catégories !</h2>
+                <a class="btn btn-primary" href="{{ path('category_new') }}">Ajouter</a>
+			</div>
+
+			<div class="row">
+
+				{% for category in categories %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
+                        <div class="card cardStyle1">
+                            <img src="{{ asset(category.imagePath) }}" alt="{{ category.name }}" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="text-center">{{ category.name }}</h5>
+                                <h5 class="text-center">{{ category.price | euroPrice }}</h5>
+                            </div>
+                            <div class="card-button">
+                                <a href="{{ path('admin_category_id_show',{'id' : category.id}) }}" class="btn color-button w-100">Voir</a>
+                                <a href="{{ path('category_edit',{'id' : category.id }) }}" class="btn btn-info textButtonUpdate w-100">Modifier</a>
+                                {{ include('admin/category/_delete_form.html.twig') }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+			</div>
+
+		</div>
+
+    </div> #}

@@ -7,7 +7,6 @@
 .h3AdminHome
 {
     margin-top: 100px;
-
 }
 
 .textAdminHome
@@ -19,5 +18,28 @@
 .h4Home
 {
     text-align: center;
+    color: rgb(38, 38, 38);
+}
+
+.section3Text
+{
+    font-size: 25px;
+    color: #F7F4EF;
+}
+
+.h1Product
+{
+    text-align: center;
+    color: #009540;  
+}
+
+.h2Product
+{
+    text-align: center;
+    color: rgb(38, 38, 38);
+}
+
+.textTitleCard
+{
     color: rgb(38, 38, 38);
 }

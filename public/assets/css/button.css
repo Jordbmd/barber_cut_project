@@ -1,17 +1,44 @@
-.color-button
+.color-button {
+  color: #fff;
+  background-color: #009540;
+  border-color: #009540;
+  border-radius: 0%;
+  margin-top: 15px;
+}
+
+.card-button {
+  padding: 1rem 5rem;
+  background-color: rgba(143, 71, 71, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-link {
+  color: #009540;
+}
+
+.page-link:hover {
+  color: #009540;
+}
+
+.page-item.active > .page-link {
+  background: #009540;
+  border-color: #009540;
+}
+
+.buttonUpdate
 {
-    color: #fff;
-    background-color: #009540;
-    border-color: #009540;
+    color: white;
+    background-color: #950055;
+    border: none;
     border-radius: 0%;
 }
 
-.card-button
-{
-    padding: 1rem 5rem;
-    background-color: rgba(143, 71, 71, 0.03);
-    border-top: 1px solid rgba(0,0,0,.125);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.return {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: #009540;
 }

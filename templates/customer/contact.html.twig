@@ -1,25 +1,30 @@
 {% extends "customer/base_customer.html.twig" %}
 
-
 {% block body %}
 
-<div class="container py-5">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-center">Formulaire de contact</h3>
-                </div>
-                <div class="card-body">
-                    {{ form_start(form) }}
-                    {{ form_widget(form)}}
+    <div class="d-flex justify-content-center backgroundF7F4EF paddingtopbot50">
+        <div class=" container py-5">
+            <div class="row flexCenter">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="textTitleCard paddingtopbot10 backgroundF7F4EF">
+                                <h3 class="text-center">Besoins d'aide ?</h3>
+                            </div>
+                            <div class="card-body">
 
-                    <button class="btn btn-primary mt-3" type="submit">Envoyer</button>
-                    {{ form_end(form)}}
+                                <div class="col-auto flexCenter">
+                                    {{ form_start(form) }}
+                                    {{ form_widget(form)}}
+                                        <button class="btn color-button col-12" type="submit">Envoyer</button>
+                                    {{ form_end(form)}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}

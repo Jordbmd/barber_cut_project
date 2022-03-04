@@ -25,26 +25,22 @@
 							<a class="color_nav" href="{{ path('admin_home') }}">Administration</a>
 						</li>
 
-						{% endif %}
 
-						<li class="nav-item">
-							<a class="color_nav" href="#">Galerie</a>
-						</li>
+						{% endif %}
 
 
 						<li class="nav-item">
 							<a class="color_nav" href="{{ path('customer_product_show') }}">Magasin</a>
 						</li>
 
+						<li class="nav-item">
+							<a class="color_nav" href="{{ path('booking') }}">Reservation</a>
+						</li>
 
 						<li class="nav-item">
 							<a class="color_nav" href="{{ path('home') }}">
 								<img class="logo color_nav px-4"src="\uploads\images\logo.png" alt="logo_barber_cut">
 							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="color_nav" href="{{ path('booking') }}">Reservation</a>
 						</li>
 
 						<li class="nav-item">
@@ -67,22 +63,17 @@
 
 
 						<li class="nav-item">
-							<a class="color_nav" href="#">Galerie</a>
+							<a class="color_nav" href="{{ path('customer_product_show') }}">Magasin</a>
 						</li>
 
-
 						<li class="nav-item">
-							<a class="color_nav" href="{{ path('customer_product_show') }}">Magasin</a>
+							<a class="color_nav" href="{{ path('booking') }}">Reservation</a>
 						</li>
 
 						<li class="nav-item">
 							<a class="color_nav" href="{{ path('home') }}">
 								<img class="logo color_nav px-4"src="\uploads\images\logo.png" alt="logo_barber_cut">
 							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="color_nav" href="{{ path('booking') }}">Reservation</a>
 						</li>
 
 						<li class="nav-item">
@@ -94,7 +85,6 @@
 								Mon compte
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="{{ path('command_shop_index') }}">Mes commandes</a></li>
 								<li><a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a></li>
 								<li><a class="dropdown-item" href="{{ path('app_register') }}">S'inscrire</a></li>
 							</ul>

@@ -43,11 +43,11 @@
 					{% for i in (products|length - 1)..(products|length - 4) %}
 					
 						<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
-							<div class="card cardColor1" style="width: 18rem;">
+							<div class="card cardStyle1" style="width: 18rem;">
 								<img src="{{ asset(products[i].imagePath) }}" alt="{{ products[i].name }}" class="card-img-top">
 								<div class="card-body text-center">
 									<h5 class="text-center">{{ products[i].name }}</h5>
-									<h5 class="text-center marginBot20">{{ products[i].price | euroPrice }}</h5>
+									<h5 class="text-center">{{ products[i].price | euroPrice }}</h5>
 									<a class="btn color-button" href="{{ path('customer_product_id_show',{'id' : products[i].id}) }}">Voir le produit</a>
 								</div>
 							</div>
@@ -76,8 +76,7 @@
 			<div class="row">
 			
 				<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
-					<div class="card cardColor2" style="width: 18rem;">
-						<img src="" alt="" class="card-img-top">
+					<div class="card cardStyle2 popUpLeft" style="width: 18rem;">
 						<div class="card-body text-center">
 							<img class="icons margintop20" src="\uploads\images\hair-cut.png" alt="chaise_de_coiffeur">
 							<h5 class="text-center margintop20">Cheveux</h5>
@@ -89,8 +88,7 @@
 
 
 				<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
-					<div class="card cardColor2" style="width: 18rem;">
-						<img src="" alt="" class="card-img-top">
+					<div class="card cardStyle2 popUpLeft" style="width: 18rem;">
 						<div class="card-body text-center">
 							<img class="icons margintop20" src="\uploads\images\beard-shave.png" alt="soins_de_la_barbe">
 							<h5 class="text-center margintop20">Barbes</h5>
@@ -102,8 +100,7 @@
 
 
 				<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
-					<div class="card cardColor2" style="width: 18rem;">
-						<img src="" alt="" class="card-img-top">
+					<div class="card cardStyle2 popUpRight" style="width: 18rem;">
 						<div class="card-body text-center">
 							<img class="icons margintop20" src="\uploads\images\face-care.png" alt="soins_du_visage">
 							<h5 class="text-center margintop20">Soins du visage</h5>
@@ -115,8 +112,7 @@
 
 
 				<div class="col-sm-12 col-md-6 col-lg-3 mt-3">
-					<div class="card cardColor2" style="width: 18rem;">
-						<img src="" alt="" class="card-img-top">
+					<div class="card cardStyle2 popUpRight" style="width: 18rem;">
 						<div class="card-body text-center">
 							<img class="icons margintop20" src="\uploads\images\groom-shave.png" alt="soins_du_visage">
 							<h5 class="text-center margintop20">Certifié professionnel</h5>
@@ -129,6 +125,18 @@
 			</div>
 
 		</div>
+
+	</section>
+
+
+	{# PARTIE ICONS #}
+	<section class="section3">
+		<div class="underSection3 transparent col-12">
+			<div class="col-md-3 flexCenter section3Text text-focus-in">Moderne</div>
+			<div class="col-md-3 flexCenter section3Text">innovant</div>
+			<div class="col-md-3 flexCenter section3Text">Luxe</div>
+			<div class="col-md-3 flexCenter section3Text">Experience</div>
+		</div>	
 	</section>
 
 

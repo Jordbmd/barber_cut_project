@@ -7,3 +7,64 @@
 {
     margin-top: 20px;
 }
+
+.margintop50
+{
+    margin-top: 50px;
+}
+
+.paddingtop10
+{
+    padding-top: 10px;
+}
+
+.paddingbot20
+{
+    padding-bottom: 20px;
+}
+
+.paddingtopbot10
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.paddingtopbot20
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.paddingtop50
+{
+    padding-top: 50px;
+}
+
+.paddingtopbot50
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.flexCenter
+{
+    display: flex;
+    justify-content: center;
+}
+
+.algCenter
+{
+    display: flex;
+    align-items: center;
+}
+
+.transparent
+{
+    background-color: transparent;
+}
+
+.borderDrop
+{
+    border: none;
+    border-radius: 0%;
+}

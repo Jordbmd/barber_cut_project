@@ -1,16 +1,36 @@
 {% extends "customer/base_customer.html.twig" %}
 
 {% block title %}
-Edit Category
+Admin Product Edit
 {% endblock %}
 
 {% block body %}
-    <h1>Edit Product</h1>
 
-    {{ include('admin/product/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="backgroundF7F4EF">
+
+
+		<div class="container">
+
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Modifier votre produit commande !</h2>
+			</div>
+
+			<div class="paddingtopbot50">
+
+                {{ include('admin/product/_form.html.twig', {'button_label': 'Update'}) }}
+
+			</div>
+
+		</div>
+
+		<div class="paddingbot20">
+            <a class="return" href="{{ path('product_index') }}">Retour</a>
+        </div>
+
+	</div>
 
     {{ include('admin/product/_delete_form.html.twig') }}
 
-    <a href="{{ path('product_index') }}">back to list</a>
 
 {% endblock %}

@@ -1,36 +1,54 @@
 {% extends "customer/base_customer.html.twig" %}
 
 {% block title %}
-	Booking
+Booking
 {% endblock %}
 
 {% block body %}
 
-    <h1>Liste des reservations</h1>
+    <div class="backgroundF7F4EF">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>N° de telephone</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for booking in booking %}
-            <tr>
-                <td>{{ booking.lastname }}</td>
-                <td>{{ booking.firstname}}</td>
-                <td>{{ booking.phonenumber }}</td>
-                <td>{{ booking.date|date('Y-m-d H:i:s') }}</td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+
+		<div class="container">
+
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Toutes vos réservations !</h2>
+			</div>
+
+			<div class="paddingtopbot50">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>N° de telephone</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for booking in booking %}
+                        <tr>
+                            <td>{{ booking.lastname }}</td>
+                            <td>{{ booking.firstname}}</td>
+                            <td>{{ booking.phonenumber }}</td>
+                            <td>{{ booking.date|date('Y-m-d H:i:s') }}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+			</div>
+
+		</div>
+
+	</div>
 
 {% endblock %}
+
+

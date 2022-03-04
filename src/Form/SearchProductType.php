@@ -17,7 +17,10 @@ class SearchProductType extends AbstractType
     {
         $builder
             ->add('filterByName', TextType::class, [
-                'label' => 'Filtrer par nom de produit',
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Rechercher'
+                ),
                 'required' => false,
             ])
             ->add('filterByCategory', EntityType::class, [

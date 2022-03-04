@@ -6,59 +6,79 @@
 
 {% block body %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>N° de commande</th>
-                <td>{{ command_shop.id }}</td>
-            </tr>
-            <tr>
-                <th>Date de la commande</th>
-                <td>{{ command_shop.createdAt ? command_shop.createdAt|date('D-d-m-Y H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ command_shop.total | euroPrice}}</td>
-            </tr>
-            <tr>
-                <th>La commande a bien été facturé ?</th>
-                <td>{{ command_shop.isPayed ? 'Oui' : 'Non' }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ command_shop.getUser.lastname }}</td>
-            </tr>
-            <tr>
-                <th>Prénom</th>
-                <td>{{ command_shop.getUser.firstname }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ command_shop.getUser.email }}</td>
-            </tr>
-            <tr>
-                <th>Pays</th>
-                <td>{{ command_shop.getUser.getAddress.country }}</td>
-            </tr>
-            <tr>
-                <th>Ville</th>
-                <td>{{ command_shop.getUser.getAddress.city }}</td>
-            </tr>
-            <tr>
-                <th>Code postale</th>
-                <td>{{ command_shop.getUser.getAddress.postalcode }}</td>
-            </tr>
-            <tr>
-                <th>Rue</th>
-                <td>{{ command_shop.getUser.getAddress.street }}</td>
-            </tr>
-            <tr>
-                <th>Informations supplementaires</th>
-                <td>{{ command_shop.getUser.getAddress.commentary }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="backgroundF7F4EF">
 
-    <a href="{{ path('command_shop_index') }}">Retour</a>
+
+		<div class="container">
+
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Toutes les details de la commande !</h2>
+			</div>
+
+			<div class="paddingtopbot50">
+
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>N° de commande</th>
+                            <td>{{ command_shop.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date de la commande</th>
+                            <td>{{ command_shop.createdAt ? command_shop.createdAt|date('D-d-m-Y H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ command_shop.total | euroPrice}}</td>
+                        </tr>
+                        <tr>
+                            <th>La commande a bien été facturé ?</th>
+                            <td>{{ command_shop.isPayed ? 'Oui' : 'Non' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom</th>
+                            <td>{{ command_shop.getUser.lastname }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prénom</th>
+                            <td>{{ command_shop.getUser.firstname }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ command_shop.getUser.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Pays</th>
+                            <td>{{ command_shop.getUser.getAddress.country }}</td>
+                        </tr>
+                        <tr>
+                            <th>Ville</th>
+                            <td>{{ command_shop.getUser.getAddress.city }}</td>
+                        </tr>
+                        <tr>
+                            <th>Code postale</th>
+                            <td>{{ command_shop.getUser.getAddress.postalcode }}</td>
+                        </tr>
+                        <tr>
+                            <th>Rue</th>
+                            <td>{{ command_shop.getUser.getAddress.street }}</td>
+                        </tr>
+                        <tr>
+                            <th>Informations supplémentaires</th>
+                            <td>{{ command_shop.getUser.getAddress.commentary }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+    {# {{ include('command_shop/_delete_form.html.twig') }} #}
+
+    <a class="return" href="{{ path('command_shop_index') }}">Retour</a>
 
 {% endblock %}

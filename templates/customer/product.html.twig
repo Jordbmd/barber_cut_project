@@ -6,51 +6,57 @@
 
 {% block body %}
 
+	<div class="backgroundF7F4EF">
 
-	<div class="container">
-		<div class="row">
-			<div class="col-12 mt-3 d-flex align-items-center justify-content-between">
-				<h1>Liste des produits</h1>
+
+		<div class="container">
+
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Tous vos produits favoris !</h2>
 			</div>
 
-			<div class="col-12 mt-3">
-				<div class="card rounded-0">
-					<div class="card-header">
-						<h3>Formulaire de recherche</h3>
-					</div>
-					<div class="card-body">
-						{{ form_start(form)}}
+			<div class="row">
 
-						{{ form_widget(form)}}
+				<div class="col-12 margintop50">
+					<div class="card rounded-0">
+						<div class="card-body">
+							{{ form_start(form)}}
 
-						<button class="btn btn-info mt-3" type="submit">Rechercher</button>
+							{{ form_widget(form)}}
 
-						{{ form_end(form)}}
-					</div>
-				</div>
-			</div>
+							<button class="btn color-button" type="submit">Rechercher</button>
 
-			<div class="navigation py-2">
-				{{ knp_pagination_render(products) }}
-			</div>
-			{% for product in products %}
-				<div class="col-sm-12 col-md-6 col-lg-4 mt-3">
-					<div class="card rounded-0" style="width: 18rem;">
-						<img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top">
-						<div class="card-body text-center">
-							<h5 class="text-center">{{ product.name }}</h5>
-							<h5 class="text-center">{{ product.price | euroPrice }}</h5>
-							<a href="{{ path('customer_product_id_show',{'id' : product.id}) }}" class="btn btn-primary rounded-0 bg">Voir le produit</a>
+							{{ form_end(form)}}
 						</div>
 					</div>
 				</div>
 
+				<div class="navigation py-2">
+					{{ knp_pagination_render(products) }}
+				</div>
 
-			{% endfor %}
-			<div class="navigation py-2">
-				{{ knp_pagination_render(products) }}
+				{% for product in products %}
+					<div class="col-sm-12 col-md-6 col-lg-4 mt-3">
+						<div class="card cardStyle1" style="width: 18rem;">
+							<img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top">
+							<div class="card-body text-center">
+								<h5 class="text-center">{{ product.name }}</h5>
+								<h5 class="text-center">{{ product.price | euroPrice }}</h5>
+								<a href="{{ path('customer_product_id_show',{'id' : product.id}) }}" class="btn color-button">Voir le produit</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				
+				<div class="navigation py-2">
+					{{ knp_pagination_render(products) }}
+				</div>
 			</div>
+
 		</div>
 
 	</div>
+
+
 {% endblock %}

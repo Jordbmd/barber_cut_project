@@ -1,60 +1,43 @@
 {% extends "admin/base_admin.html.twig" %}
 
 {% block title %}
-Product
+Admin Product Home
 {% endblock %}
 
 {% block body %}
 
+    <div class="backgroundF7F4EF">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mt-3 d-flex align-items-center justify-content-between">
-                <h1>Liste des produits</h1>
-                <a class="btn btn-primary" href="{{ path('product_new') }}">Ajouter</a>
-            </div>
+		<div class="container">
 
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Formulaire de recherche</h3>
-                    </div>
-                    <div class="card-body">
-                        {{ form_start(form)}}
-                        
-                        {{ form_widget(form)}}
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Ajouter, Modifier ou Supprimer tous vos produits !</h2>
+				<a class="btn color-button" href="{{ path('product_new') }}">Ajouter</a>
+			</div>
 
-                        <button class="btn btn-info mt-3" type="submit">Rechercher</button>
-                        
-                        {{ form_end(form)}}
-                    </div>
-                </div>
-            </div>
+			<div class="row">
 
-            <div class="navigation py-2">
-                {{ knp_pagination_render(products) }}
-            </div>
-            {% for product in products %}
-                <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="w-100 imageCard">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="text-center">{{ product.name }}</h5>
-                        </div>
-                        <div class="card-button">
-                            <a class="btn btn-info w-100" href="{{ path('product_edit',{'id' : product.id }) }}">Modifier</a>
-                            <a href="{{ path('admin_product_id_show',{'id' : product.id}) }}" class="btn btn-primary w-100">See product</a>
-                            {{ include('admin/product/_delete_form.html.twig') }}
+				{% for product in products %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
+                        <div class="card cardStyle1">
+                            <img src="{{ asset(product.imagePath) }}" alt="{{ product.name }}" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="text-center">{{ product.name }}</h5>
+                                <h5 class="text-center">{{ product.price | euroPrice }}</h5>
+                            </div>
+                            <div class="card-button">
+                                <a href="{{ path('admin_product_id_show',{'id' : product.id}) }}" class="btn color-button w-100">Voir</a>
+                                <a href="{{ path('product_edit',{'id' : product.id }) }}" class="btn btn-info buttonUpdate w-100">Modifier</a>
+                                {{ include('admin/product/_delete_form.html.twig') }}
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-            <div class="navigation py-2">
-                {{ knp_pagination_render(products) }}
-            </div>
-        </div>
-    
+                {% endfor %}
+			</div>
+
+		</div>
+
     </div>
+
 {% endblock %}
