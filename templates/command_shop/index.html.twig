@@ -5,36 +5,53 @@
 {% endblock %}
 
 {% block body %}
-    <h1>CommandShop index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>N° de commande</th>
-                <th>Date de la commande</th>
-                <th>Prix</th>
-                <th>La commande a bien été facturé ?</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for command_shop in command_shops %}
-            <tr>
-                <td>{{ command_shop.id }}</td>
-                <td>{{ command_shop.createdAt ? command_shop.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ command_shop.total | euroPrice}}</td>
-                <td>{{ command_shop.isPayed ? 'Oui' : 'Non' }}</td>
-                <td>
-                    <a href="{{ path('command_shop_show', {'id': command_shop.id}) }}">Voir</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="backgroundF7F4EF">
 
-    <a href="{{ path('command_shop_new') }}">Create new</a>
+
+		<div class="container">
+
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Toutes les commandes de vos clients !</h2>
+			</div>
+
+			<div class="paddingtopbot50">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>N° de commande</th>
+                            <th>Date de la commande</th>
+                            <th>Prix</th>
+                            <th>La commande a bien été facturé ?</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for command_shop in command_shops %}
+                        <tr>
+                            <td>{{ command_shop.id }}</td>
+                            <td>{{ command_shop.createdAt ? command_shop.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                            <td>{{ command_shop.total | euroPrice}}</td>
+                            <td>{{ command_shop.isPayed ? 'Oui' : 'Non' }}</td>
+                            <td>
+                                <a href="{{ path('command_shop_show', {'id': command_shop.id}) }}">Voir</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
 {% endblock %}

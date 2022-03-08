@@ -35,7 +35,7 @@ class ProductController extends AbstractController
         $products = $paginator->paginate(
             $productRepository->findAllBySearchFilter($search), /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
-            10 /*limit per page*/
+            100 /*limit per page*/
         );
 
         return $this->render('admin/product/index.html.twig', [

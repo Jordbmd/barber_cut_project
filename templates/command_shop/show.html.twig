@@ -6,28 +6,47 @@
 
 {% block body %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>N° de commande</th>
-                <td>{{ command_shop.id }}</td>
-            </tr>
-            <tr>
-                <th>Date de la commande</th>
-                <td>{{ command_shop.createdAt ? command_shop.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ command_shop.total | euroPrice}}</td>
-            </tr>
-            <tr>
-                <th>La commande a bien été facturé ?</th>
-                <td>{{ command_shop.isPayed ? 'Oui' : 'Non' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="backgroundF7F4EF">
 
-    <a href="{{ path('command_shop_index') }}">Retour</a>
 
-    {{ include('command_shop/_delete_form.html.twig') }}
+		<div class="container">
+
+			<div class="col-12 paddingtop50">
+				<h1 class="h1Product">Barber'cut</h1>
+				<h2 class="h2Product">Tous les details de la commande !</h2>
+			</div>
+
+			<div class="paddingtopbot50">
+
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>N° de commande</th>
+                            <td>{{ command_shop.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date de la commande</th>
+                            <td>{{ command_shop.createdAt ? command_shop.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ command_shop.total | euroPrice}}</td>
+                        </tr>
+                        <tr>
+                            <th>La commande a bien été facturé ?</th>
+                            <td>{{ command_shop.isPayed ? 'Oui' : 'Non' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+			</div>
+
+		</div>
+
+        <div class="paddingbot20">
+            <a class="return" href="{{ path('command_shop_index') }}">Retour</a>
+        </div>
+
+	</div>
+
 {% endblock %}
